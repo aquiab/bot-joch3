@@ -1,0 +1,23 @@
+{
+  "name": "bot-joche",
+  "version": "1.0.0",
+  "description": "bot para discord",
+  "main": "main.js",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aquiab/bot-joche.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aquiab/bot-joche/issues"
+  },
+  "homepage": "https://github.com/aquiab/bot-joche#readme"
+}

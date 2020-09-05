@@ -35,14 +35,15 @@ client.on('message', message => {
 
     const now = Date.now();
     const timestamps = cooldowns.get(command.name);
-    const cooldownAmount = (command.cooldown || 3) * 1000;
+    const cooldownAmount = (command.cooldown || 2) * 1000;
 
     if (timestamps.has(message.guild.id)) {
         const expirationTime = timestamps.get(message.guild.id) + cooldownAmount;
 
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000 / 60;
-            return message.reply(`por favor bancate unos ${timeLeft.toFixed(0)} minutitos`);
+            message.reply(`dios sos un pelotudo`)
+            return message.channel.send(`${timeLeft.toFixed(0)} minutos`);
         }
     }
 

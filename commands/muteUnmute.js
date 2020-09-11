@@ -7,11 +7,7 @@ module.exports = {
             message.delete()
             let channel = message.guild.channels.cache.get(message.member.voice.channel.id)
             for (const [memberID, member] of channel.members) {
-                if(!member.voice.serverMute){
-                    member.voice.setMute(true)
-                } else {
-                    member.voice.setMute(false)
-                } 
+                member.voice.setMute(!member.voice.serverMute)
             }
         } else {
             message.reply('no estas en el canal de voz')

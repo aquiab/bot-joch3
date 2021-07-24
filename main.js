@@ -42,8 +42,8 @@ client.on('message', message => {
 
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000 / 60;
-            message.reply(`dios sos un pelotudo`)
-            return message.channel.send(`${timeLeft.toFixed(0)} minutos`);
+            message.reply(`sos PELOTUDO?????`)
+            return message.channel.send(`faltan ${timeLeft.toFixed(0)} minutos`);
         }
     }
 

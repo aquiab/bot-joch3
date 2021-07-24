@@ -26,7 +26,7 @@ module.exports = {
 				  return
 				}
 				var enviadas = data.trim().split('\n')
-				if (enviadas.length > 250) {          //al llegar a 250 imagenes registradas se resetea la lista
+				if (enviadas.length >= files.length) {          // se resetea la lista
 					fs.writeFile('./data/imgs_enviadas.txt', '',  err => {console.error(err)})
 					enviadas = []
 				}

@@ -2,3 +2,6 @@
 /recuerdos
 /data
 config.json
+play.js
+package-lock.json
+main-pm2.json

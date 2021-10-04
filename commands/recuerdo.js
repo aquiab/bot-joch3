@@ -1,5 +1,4 @@
 const fs = require('fs')
-const { MessageAttachment } = require('discord.js')
 
 var files = fs.readdirSync('./recuerdos')
 
@@ -31,8 +30,12 @@ module.exports = {
 					enviadas = []
 				}
 				var str_archivo = get_elem_random(enviadas)
-				const attachment = new MessageAttachment('./recuerdos/' + str_archivo)
-				message.channel.send(attachment)
+				message.channel.send({
+					files: [{
+						attachment: './recuerdos/' + str_archivo,
+						name: str_archivo,
+					}]
+				})
 				fs.writeFile('./data/imgs_enviadas.txt', str_archivo + '\n', { flag: 'a+' },  err => {console.error(err)})
 			})
 		} 

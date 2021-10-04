@@ -1,9 +1,9 @@
 const fs = require('fs')
-const Discord = require('discord.js')
+const { Client, Intents, Collection } = require('discord.js');
 const { prefix, token } = require('./config.json')
 
-const client = new Discord.Client()
-client.commands = new Discord.Collection()
+const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MESSAGES]})
+client.commands = new Collection()
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 
 for (const file of commandFiles) {
@@ -11,14 +11,14 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-const cooldowns = new Discord.Collection()
+const cooldowns = new Collection()
 
 client.once('ready', () => {
     console.log('Ready!')
-    client.user.setActivity('-ayuda')
+    client.user.setActivity('arreglar este bot de mierda')
 });
 
-client.on('message', message => {
+client.on('messageCreate', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return
 
     const args = message.content.slice(prefix.length).trim().split(/ +/)
@@ -30,7 +30,7 @@ client.on('message', message => {
 
     /* cooldowns */
     if (!cooldowns.has(command.name)) {
-        cooldowns.set(command.name, new Discord.Collection());
+        cooldowns.set(command.name, new Collection());
     }
 
     const now = Date.now();

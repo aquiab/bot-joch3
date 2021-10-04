@@ -4,9 +4,8 @@
   "description": "bot para discord",
   "main": "main.js",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^13.1.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

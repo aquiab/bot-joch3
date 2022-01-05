@@ -15,7 +15,7 @@ const cooldowns = new Collection()
 
 client.once('ready', () => {
     console.log('Ready!')
-    client.user.setActivity('arreglar este bot de mierda')
+    client.user.setActivity('pescado')
 });
 
 client.on('messageCreate', message => {
@@ -43,7 +43,6 @@ client.on('messageCreate', message => {
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000 / 60;
             message.reply(`sos PELOTUDO?????`)
-            return message.channel.send(`faltan ${timeLeft.toFixed(0)} minutos`);
         }
     }
 
@@ -54,7 +53,7 @@ client.on('messageCreate', message => {
         command.execute(message, args)
     } catch (error) {
         console.error(error)
-        message.reply('hubo un error jaja')
+        message.reply('hubo un error jaja:' + error)
     }
 })
 
